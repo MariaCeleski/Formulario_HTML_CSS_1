@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   
+
+ body{
+  font-family: sans-serif;
+  background:linear-gradient(to bottom, #e2d4d4, #967272) ;  
+  
+}
+
+.corpoFormulario{
+    background:linear-gradient(to bottom, #e2d4d4, #967272) ;
+}
+
+h1{
+  text-align: center;
+  text-decoration-line: underline;
+  background:linear-gradient(to bottom, #e2d4d4, #b67f7f) ;
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 10px 15px rgba(0,0,0,.8);
+  border-radius: 10px;  
+  font-variant:small-caps;
+
+}
+
+legend {
+  background-color: rgb(161, 18, 18);
+  color: white;
+  font-size: 20px;
+  padding: 15px 50px;
+  text-align:center;
+  box-shadow: 0 10px 15px rgba(0,0,0,.8);
+  border-radius: 10px; 
+  text-shadow: 5px 2px 10px #000;
+  font-variant:small-caps;
+}
+    
+fieldset {
+  width: 600px;
+  margin: 50px auto;
+  background-color: rgba(207, 182, 182, 0.933);
+  padding: 20px 50px;
+  border-radius: 10px; 
+  border: none;
+}
+
+input {
+  margin: 5px;
+  border-radius: 10px; 
+}
+
+.confirm{
+  font-size: 20px;
+  width: 600px;
+  height: 50px;
+  margin-top: 20px;
+  background-color: rgb(161, 18, 18);
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0,0,0,.8);
+  text-shadow: 0.5px 1px 1px rgb(101, 94, 94);
+  cursor: grabbing;
+ 
+}
+.confirm:hover{
+    text-decoration: underline;
+    color: #f2e8e6;
+    font-variant:small-caps;
+    
+}
+.confirm:active{
+    color: darkred;
+    text-decoration: underline;
+}
+
+
+</style>
+</head>
+ 
+<body>    
+      
+    <h1>Ficha de Cadastro</h1>
+    
+    <form action="">
+     <fieldset class=corpoFormulario>
+      <legend>Digite os Dados</legend>
+      <label for="fname"><strong>Nome completo</strong></label>
+      <input type="text" id="fname" required>
+         
+      <label for="nascimento"><strong>Nascimento</strong></label>
+      <input type="date" id="nascimento" required><br><br>     
+
+      <label for="cpna"><strong>CPF:</strong></label>
+      <input type="text" id="cpname" placeholder="Ex.: 000.000.000-00" required> 
+
+      <label for="lname"><strong>Naturalidade</strong></label>
+      <input type="text" id="lname" required><br><br>
+         
+      <label for="email"><strong>Email:</strong></label>
+      <input type="email" id="email" required> 
+         
+      <label for="fone"><strong>Telefone</strong></label>
+      <input type="tel" id="fone" placeholder="48-900000000" pattern="[0-9]{2}-[0-9]{9}" required><br><br>
+         
+      <label for="logradouro"><strong>Logradouro</strong></label>
+      <input type="text" id="logradouro" required>
+         
+      <label for="numero"><strong>Número</strong></label>
+      <input type="text" id="numero" required><br><br>
+         
+      <label for="bairro"><strong>Bairro</strong></label>
+      <input type="text" id="bairro" required> 
+         
+      <label for="municipio"><strong>Município</strong></label>
+      <input type="text" id="municipio" required><br><br>
+         
+      <label for="estado"><strong>Estado</strong></label>
+      <input type="text" id="estado" required> 
+         
+      <label for="cep"><strong>CEP</strong></label>
+      <input type="text" id="cep" required><br><br>     
+             
+      <label for="datetime-local"><strong>Data e Hora do Cadastro</strong></label>
+      <input type="datetime-local" id="datetime_local" name="datetime_local" required><br><br>
+    
+    
+      <button class="confirm" type="button" onclick="confirma()"><strong>Confirma</strong></button>
+      
+    <br><br>
+     </fieldset>
+    </form>    
+          
+    <br>
+    <hr style="height:10px">
+    
+    <form action="">
+        <fieldset>
+            <div id="saida" style="background:linear-gradient(to bottom, #e2d4d4, #b67f7f) ;font-size: 20px; font-family: lucida-sanz; color: rgb(34, 20, 20); font-variant:small-caps;"><strong><i>Registros:</i></strong></div>
+        </fieldset>
+    </form>
+        
+    </body>
+            
+    <script type="text/javascript">
+        
+    var nome, cpf, naturalidade, e_mail, fone, nascimento, logradouro, numero, bairro, municipio, estado, cep, datetime_local
+    
+    function confirma()
+    {
+        nome = ''
+        nome = document.getElementById("fname").value
+        cpf = document.getElementById("cpname").value
+        naturalidade = document.getElementById("lname").value
+        e_mail = document.getElementById("email").value
+        fone = document.getElementById("fone").value
+        nascimento = document.getElementById("nascimento").value
+        logradouro = document.getElementById("logradouro").value   
+        numero = document.getElementById("numero").value
+        bairro = document.getElementById("bairro").value
+        municipio = document.getElementById("municipio").value
+        estado = document.getElementById("estado").value
+        cep = document.getElementById("cep").value
+        datetime_local = document.getElementById("datetime_local").value
+        
+        document.getElementById("fname").value = ""
+        document.getElementById("cpname").value = ""
+        document.getElementById("lname").value = ""
+        document.getElementById("email").value = ""
+        document.getElementById("fone").value = ""
+        document.getElementById("nascimento").value = ""
+        document.getElementById("logradouro").value=""
+        document.getElementById("numero").value=""
+        document.getElementById("bairro").value=""
+        document.getElementById("municipio").value=""
+        document.getElementById("estado").value=""
+        document.getElementById("cep").value=""        
+        document.getElementById("datetime_local").value = ""
+        
+        document.getElementById("saida").innerHTML += '<br>Nome: ' + nome + '<br>Data de nascimento: ' + nascimento + '<br>CPF: ' + cpf +'<br>Naturalidade: '+ naturalidade +'<br>Email: '+ e_mail + '<br>Telefone: ' + fone + '<br>Logradouro: ' +  logradouro + '<br>Número: ' +  numero + '<br>Bairro: ' +  bairro + '<br>Município: ' +  municipio + '<br>Estado: ' +  estado + '<br>CEP: ' +  cep + '<br>Data e Hora do Cadastro: ' + datetime_local + '<br>'
+           
+    }
+        
+    
+    </script>
+
+</html>
